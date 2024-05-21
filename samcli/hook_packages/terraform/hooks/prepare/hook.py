@@ -213,6 +213,8 @@ def _generate_plan_file(skip_prepare_infra: bool, terraform_application_dir: str
                 check=True,
                 capture_output=True,
                 cwd=terraform_application_dir,
+                shell=True,
+                executable="/bin/bash"
             )
 
             LOG.warning("*******************************************")
