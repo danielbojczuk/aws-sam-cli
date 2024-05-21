@@ -109,6 +109,10 @@ def invoke_subprocess_with_loading_pattern(
                             and line[0:4] == bytes(TERRAFORM_ERROR_PREFIX)
                         )
                         decoded_line = _check_and_process_bytes(line, preserve_whitespace=is_error)
+                        
+                        if decoded_line.startswith("[command]"):
+                            next
+
                         if LOG.getEffectiveLevel() < logging.INFO:
                             LOG.debug(decoded_line)
                         if not is_error:
