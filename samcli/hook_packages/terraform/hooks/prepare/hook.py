@@ -227,7 +227,7 @@ def _generate_plan_file(skip_prepare_infra: bool, terraform_application_dir: str
             stderr_output = e.stderr.decode("utf-8")
 
         # one of the subprocess.run calls resulted in non-zero exit code or some OS error
-        LOG.debug(
+        LOG.warning(
             "Error running terraform command: \n" "cmd: %s \n" "stdout: %s \n" "stderr: %s \n",
             e.cmd,
             e.stdout,
