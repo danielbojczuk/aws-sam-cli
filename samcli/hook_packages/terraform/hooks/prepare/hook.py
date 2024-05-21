@@ -216,7 +216,7 @@ def _generate_plan_file(skip_prepare_infra: bool, terraform_application_dir: str
             )
 
             LOG.warning("*******************************************")
-            LOG.warning(result)
+            LOG.warning(result.stdout)
     except CalledProcessError as e:
         stderr_output = str(e.stderr)
 
